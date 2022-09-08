@@ -1,0 +1,147 @@
+.header {
+    border: 1px solid rgb(241, 227, 204);
+    background-color:blanchedalmond;
+    padding: 40px 400px;
+    font-family: cursive;
+    text-align: center;
+}
+.header > .page-icon {
+    display: none;
+}
+.nav {
+    border-bottom: 3px solid bisque;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.container-menu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.item li {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px 80px;
+}
+.item li > a {
+    text-decoration: none;
+    color:brown;
+}
+.item li > a:hover {
+    font-style: italic;
+}
+
+/* 메인 */
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.main-grid div {
+    margin: 20px;
+}
+.main-grid div > h3 , div > p {
+    text-align:center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 메인 -1 비디오 */
+.main-grid .video {
+    background-color:rgba(250, 235, 215, 0.521);
+    grid-column: 1/2;
+    grid-row: 1/2;
+    border-radius: 10px;
+}
+.video iframe {
+    display: block;
+    margin: auto;
+}
+/* 메인 -2 인기게시물 */
+.main-grid .popular {
+    background-color:rgba(250, 235, 215, 0.521);
+    grid-column: 1/2;
+    grid-row: 2/4;
+    border-radius: 10px;
+}
+.popular a, .brands a {
+    text-decoration: none;
+    color: black;
+}
+.popular a:hover, .brands a:hover {
+    font-size: 1.3em;
+    color: blue;
+}
+.refimg {
+    display: block;
+    margin: auto;
+    width: fit-content;
+}
+.texts {
+    text-align: center;
+}
+/* 메인 -3 브랜드관 */
+.main-grid .brands {
+    background-color:rgba(250, 235, 215, 0.521);
+    grid-column: 2/4;
+    grid-row: 1/3;
+    border-radius: 10px;
+}
+
+/* 메인 -4  신제품 */
+.main-grid .new-arrival {
+    background-color:rgba(250, 235, 215, 0.521);
+    grid-column: 2/4;
+    grid-row: 3/4;
+    border-radius: 10px;
+}
+.new-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item span::after {
+    content: "New ";
+    width: 22px;
+    background-color: orange;
+    color: aliceblue;
+    border-radius: 100%;
+}
+
+/* 푸터 영역 */
+.footer {
+    border: 1px solid rgb(241, 227, 204);
+    background-color:blanchedalmond;
+    text-align: center;
+}
+.foot-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 20px 250px;
+}
+.foot-2 {
+    list-style-type: none;
+    text-align: left;
+}
+
+
+/* 모바일크기 보여질 화면 - width값 576px이하 */
+@media screen and (max-width:576px) {
+    .header > .title {
+        display: none;
+    }
+    .header > .page-icon {
+        display: block;
+        margin: auto;
+        width: fit-content;
+    }
+
+    .nav .container-menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+    .main-grid {display: block;}
+    .brands .refimg {width: 350px;}
+    .footer {display: block}
+
+};
